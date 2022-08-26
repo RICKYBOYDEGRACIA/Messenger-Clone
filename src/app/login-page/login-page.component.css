@@ -1,0 +1,14 @@
+.header a:hover{
+  cursor: pointer;
+}
+.Menu a:link{
+    text-decoration: none;
+  }
+  .Menu a:hover{
+    color: #A51E8A;
+  }
+  .Menu a{
+    color: black;
+    margin-left: 7%;
+    width: auto;
+  }

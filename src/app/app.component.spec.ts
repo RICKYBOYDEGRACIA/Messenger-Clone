@@ -23,7 +23,6 @@ describe('AppComponent', () => {
   it(`should have as title 'UI-Cloning'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('UI-Cloning');
   });
 
   it('should render title', () => {

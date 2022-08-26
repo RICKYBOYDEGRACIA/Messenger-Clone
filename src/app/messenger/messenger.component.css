@@ -1,0 +1,73 @@
+/*Entire Page*/
+.body a{
+    cursor: pointer;
+}
+
+/*First Part*/
+.side-heroes-contents a{
+    display: block;
+    text-align: center;
+    padding:4%;
+    
+}
+.side-heroes-contents a:hover{
+    border-radius: 4px;
+    background-color: #ececec;
+}
+
+/*Second Part*/
+.img img{
+    margin-left: 2%;
+    float: right;
+    padding: 2%;
+}
+.chat-contents-space img:hover{
+    background-color: #ececec;
+    border-radius: 4px;
+}
+
+.chat-content-text:hover{
+    background-color: #ececec;
+}
+/*Third Part*/
+.message-top-icon a{
+    margin-left: 10%;
+    padding: 2%;
+}
+.message-top-icon a:hover{
+    background-color: #ececec;
+    border-radius: 4px;
+}
+
+
+/*Fourt Part*/
+.rightside-img img:hover{
+    background-color: #ececec;
+}
+.rightside-text li{
+    list-style-type: none;
+    font-size: 14px;
+    margin: 2%; 
+    padding: 2%;
+   
+}
+.rightside-text li:hover{
+    background-color: #ececec;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.right-icons img:hover{
+    cursor: pointer;
+}
+
+
+.text{
+    margin-left: 4%;
+    font-size: 1px;
+    font-weight: bold;
+}
+.text li{
+    font-size: 16px;
+    font-weight: bold;
+}
+

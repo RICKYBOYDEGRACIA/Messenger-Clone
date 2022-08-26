@@ -1,0 +1,146 @@
+
+<title>Messenger</title>
+
+<div class="body" style="display:flex; margin: 0; padding: 0%; width: 100%; height: 100vh; position: fixed;">
+
+<!------------------------First Part------------------------>
+
+    <div class="side-heroes" style=" width: 3%; border-right: 1px solid #c9ccd1;    ">
+        <div class="side-heroes-contents" style="padding: 2%;">
+            <a class="chat-image"><img src="assets/img/chat.png" placement="end" ngbTooltip="Chats"></a>
+            <!--<span class="chat">Chats</span>-->
+            <a><img src="assets/img/people.png" placement="end" ngbTooltip="People"></a>
+            <!--<span class="people">People</span>-->
+            <a><img src="assets/img/market-place.png" placement="end" ngbTooltip="MarketPlace"></a>
+            <!--<span class="market-place">Market Place</span>-->
+            <a><img src="assets/img/request.png" placement="end" ngbTooltip="Requests"></a>
+            <!--<span class="request">Requests</span>-->
+            <a><img src="assets/img/archive.png" placement="end" ngbTooltip="Archived"></a>
+            <!--<span class="archive">Archived</span>-->
+
+            <div class="side-heroes-contents-footer" style=" position:fixed;   width:3%;bottom: 0;">
+                 <a><img src="assets/img/profile.jpg" placement="top" ngbTooltip="Profile" style="width: 32px;  border-radius: 50px;"></a>
+                 <a><img src="assets/img/messenger.png" style="width:32px; padding:10%; "></a>
+            </div>
+        </div>    
+    </div>
+
+<!----------------------Second Part-------------------------->
+
+    <div class="chat" style="width: 25%; height: 100vh; border-right: 1px solid #c9ccd1;">
+        <div class="chat-contents" style="display:inline-flex; padding: 2%;  width: 100%;">
+            <h3>Chats</h3>
+                <div class="chat-contents-space" style=" width: 100%; ">
+                    <div class="img" >
+                        <a><img src="assets/img/task.png" ></a>
+                        <a><img src="assets/img/video1.png"></a>       
+                    </div>
+                </div> 
+        </div>
+
+          <div class="form-group has-search">
+            <input type="text" class="form-control" placeholder="Search" style="width:90%; text-align: center; margin-left: auto; margin-right: auto; border-radius: 25px;">
+          </div>
+
+        <!--Chatmate-Component-->
+          <app-sidebar (conversationClicked)="onConversationSelected($event)"> </app-sidebar>
+    
+        <div class="chat-contents-space" style="position:fixed; border-top: 1px solid;  padding:5px; color: #c9ccd1; width: 25%; bottom: 0; text-align: center; display: flex; margin-right: auto; margin-left: auto;">
+            <div class="chat-content-text" style=" width: 90%; padding: 1%; border-radius: 5px; margin-right: auto; margin-left: auto; ">
+                <img src="assets/img/download.png" style="margin-right: 1%;">
+                <a style="text-decoration: none; color:black; font-weight: bold; ">Install Messenger App</a>
+            </div>
+        </div>
+    </div>
+
+<!----------------------Third Part-------------------------->
+
+    <div class="message-container" style=" border-right: 1px solid #c9ccd1; width: 46%; ">
+        <div class="message-top" style=" border-bottom: 1px solid #c9ccd1; box-shadow: 20px;  padding: 1%; display: flex; width: 100%; ">
+            <div class="message-name" style="display: flex;  width: 100%;">
+                <img src="assets/img/profile.jpg" style="width: 42px; height: 42px; border-radius: 25px;">
+                <h2>Ricky Boy</h2>
+            </div>
+            
+            <div class="message-top-right" style=" width: 100%;">
+                <div class="message-top-icon" style="display: inline-flex; align-items: center; padding:1%; float: right; width: 50%;">
+                    <a><img src="assets/img/call1.png" height="27px" width="27px"  placement="bottom" ngbTooltip="Start a voice call"></a>
+                    <a><img src="assets/img/video1.png" height="27px" width="27px" placement="bottom" ngbTooltip="Start a video call"></a> 
+                    <a><img src="assets/img/tdots.png" height="27px" width="27px" placement="bottom" ngbTooltip="Conversation Information"></a>
+                </div>
+            </div>  
+        </div>
+        <!--<h1 style="text-align: center; font-size: 18px;  : #c9ccd1; padding: 26%;"> Select chat or start a new conversation</h1>-->
+        <!--Conversation Component-->
+        <app-chats [conversation]="conversation" *ngIf="conversation"></app-chats> 
+      
+        
+    </div>
+
+<!---------------------Fourt Part-------------------------->    
+
+    <div class="rightside-contents" style="border-right: 1px solid #c9ccd1; width:25%; overflow: scroll;">
+       <div class="rightside-data">
+            <div class="rightside-image" style="text-align: center;">
+                <img src="assets/img/profile.jpg" height="120px">
+                <h3>Ricky Boy G. De Gracia</h3>
+            </div>
+        </div>
+
+        <div class="rightside-img" style=" text-align: center;">
+            <div class="right-icons" style="display: inline-flex;">
+                
+                <div class="icon-profile" style="padding: 5%;">
+                    <img src="assets/img/profile.jpg" height="32px" style="border-radius: 32px; padding:2%;">
+                    <p>Profile</p>
+                </div>
+
+                <div class="icon-mute" style="padding: 5%;">
+                    <img src="assets/img/bell.png" height="32px" style="border-radius: 32px; padding:2%;">
+                    <p>Mute</p>
+                </div>
+
+                <div class="icon-search" style="padding: 5%;">
+                    <img src="assets/img/searchIcon.svg" height="30px" style="border-radius: 32px; padding:2%;">
+                    <p>Search</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="rightside-text" style="margin-top: 20%; font-weight: bold;">
+
+            <a><li type="button" (click)="chat.toggle()" [attr.aria-expanded]="!isCollapsedchat" aria-controls="collapseExample">Customize Chat</li> </a>
+             
+              <div #chat="ngbCollapse" [(ngbCollapse)]="isCollapsedchat">
+                <div class="text">
+                 <a><li><img src="assets/img/theme.png" height="22px"/> Change theme</li></a>
+                 <a><li><img src="assets/img/emoji.png" height="22px"/> Change emoji</li></a>
+                 <a><li><img src="assets/img/nickname.png" height="22px"/> Edit nicknames</li></a>
+                </div>
+              </div>
+
+            <a><li type="button" (click)="media.toggle()" [attr.aria-expanded]="!isCollapsedmedia" aria-controls="collapseExample">Media, files and links</li> </a>
+             
+              <div #media="ngbCollapse" [(ngbCollapse)]="isCollapsedmedia">
+                <div class="text">
+                 <a><li><img src="assets/img/album.png" height="22px"/> Media</li></a>
+                 <a><li><img src="assets/img/note.png" height="22px"/> Files</li></a>
+                 <a><li><img src="assets/img/links.png" height="22px"/>Links</li></a>
+                </div>
+              </div>
+
+            <a><li type="button" (click)="privacy.toggle()" [attr.aria-expanded]="!isCollapsedprivacy" aria-controls="collapseExample">Privacy & support</li> </a>
+             
+              <div #privacy="ngbCollapse" [(ngbCollapse)]="isCollapsedprivacy">
+                <div class="text">
+                 <a><li><img src="assets/img/encrypted.png" height="22px"/> Start end-to-end encrypted chat</li></a>
+                 <a><li><img src="assets/img/bell.png" height="22px"/> Mute notification</li></a>
+                 <a><li><img src="assets/img/block.png" height="22px"/> Block</li></a>
+                 <a><li><img src="assets/img/report.png" height="22px"/> Report</li></a>
+                </div>
+              </div>
+
+        </div>
+    </div>
+</div>
+

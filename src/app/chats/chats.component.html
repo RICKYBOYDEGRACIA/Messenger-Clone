@@ -1,0 +1,21 @@
+
+<div id="container" >
+    <div id="body">
+        <div id="textarea">
+            <a><img src="assets/img/plus.png" width="30px" height="30px" placement="top" ngbTooltip="Open more actions"></a>
+            <a><img src="assets/img/album.png" width="30px" height="30px" placement="top" ngbTooltip="Attach a file"></a>
+            <a><img src="assets/img/note.png" width="30px" height="30px" placement="top" ngbTooltip="Choose a Sticker"></a>
+            <textarea type="text" class="form-control" placeholder="Aa" (keyup.enter)="submitMessage($event)" ></textarea>
+            <a><img src="assets/img/heart.png" width="30px" height="30px" placement="top" ngbTooltip="Send a heart"></a>
+         
+        </div>
+
+          <div
+            class="message"[ngClass]="{ me: message.me }" *ngFor="let message of conversation.messages">
+              <div class="messageContent">
+                {{ message.body }}
+              </div>
+        </div>   
+    </div>
+</div>
+  
